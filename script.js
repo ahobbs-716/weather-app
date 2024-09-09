@@ -3,10 +3,10 @@ const cells = document.querySelectorAll('.cell');
 
 // Define image URLs for button background
 const imageUrls = [
-    'shorts.jpg',      // Image for Action 2
+    'comfy_warm.jpg',
     'medium_cold.jpg',
-    'comfy_warm.jpg',   // Image for Warm and Cozy
-    'autumn_leaves.jpg', // Image for Autumn Vibes
+    'shorts.jpg',
+    'autumn_leaves.jpg', 
 ];
 
 // Define text for each cell in Warm and Cozy style
