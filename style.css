@@ -1,0 +1,364 @@
+:root {
+    --dark-mauve: #cc93ac;
+    --light-mauve: #f3e8fa;
+    --green: #2CA6A4;
+    --blue: #1768AC;
+    --light-blue: #97DFFC;
+    --bright-mauve: #BA2D0B;
+    --autumn_red: #db3421;
+    --autumn_yellow: #f56f27;
+    --autumn_black: #1f0a07;
+
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+
+header, footer {
+    background-color: #f3e8fa;
+    padding: 1.5rem 5%; /* Adjust padding */
+    color: black; /* Change text color for visibility */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .fas, footer .fas {
+    color: #cc93ac; /* Color of the gear icon */
+    font-size: 2rem; /* Increase the size of the gear icon */
+    margin-right: 1rem; /* Space between the gear icon and the header text */
+}
+
+header h1, footer h1 {
+    color: #cc93ac;
+    font-size: 1.5rem; /* Adjust this value to make the text smaller */
+    margin: 0; /* Remove default margin for better alignment */
+}
+
+main {
+    background-color: #f3e8fa;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.cta {
+    background-image: url('autumnleaves.jpg');
+    background-color: transparent; /* Fallback color */
+    color: lemonchiffon; /* Hide button text */
+    border: 20px solid lemonchiffon; /* Add border with desired thickness and color */
+    width: 60vw; /* Set width to 60% of the viewport width */
+    height: 60vw; /* Set height to match width (to maintain circular shape) */
+    border-radius: 50%; /* Make the button circular */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    font-size: calc(60vw / 2.3); /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    padding: 0; /* Remove padding */
+    overflow: hidden; /* Hide any overflow text or content */
+    margin-bottom: 5vw; /* Space below the button */
+    background-size: cover; /* Ensure the background image covers the button */
+    background-position: center; /* Center the background image */
+    animation: pulseBorder 2s infinite;
+}
+
+/* Hide the image initially */
+#new-image.hidden {
+    display: none;
+}
+
+/* Show the image when button is clicked */
+#new-image {
+    display: none; /* Initially hidden */
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cta.clicked {
+    animation: none; /* Stop the animation when clicked */
+}
+
+/* Button clicked state */
+.cta.clicked + #new-image {
+    display: block; /* Show the image */
+}
+
+.cell-text {
+    /*color: white; !* Color of the text *!*/
+    font-size: 1rem; /* Adjust font size */
+    text-align: center; /* Center text horizontally */
+    width: 100%; /* Make text block full width to fit within the cell */
+    height: 100%; /* Make text block full height to fit within the cell */
+    display: flex; /* Use flexbox to center the text */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    box-sizing: border-box; /* Ensure padding and border are included in the element’s dimensions */
+}
+
+/* New styles for the row of cells */
+.cell-row {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Space between cells */
+    margin: 20px 0; /* Margin above and below the row */
+    flex-wrap: wrap; /* Allow wrapping if necessary */
+}
+
+.cell {
+    flex: 1; /* Each cell takes up equal space */
+    margin: 5px; /* Margin around each cell */
+    padding: 0; /* Remove padding inside each cell */
+    text-align: center; /* Center text horizontally */
+    border: 0px solid lemonchiffon; /* Border for definition */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    border-radius: 10px; /* Rounded edges for each cell */
+    background-size: cover; /* Ensure the background image covers the cell */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating background images */
+    height: 80px; /* Adjust height as needed */
+    background-color: #fcf5fc;
+    font-weight: bold; /* Make the font bold */
+}
+
+/* Specific styles for each cell */
+.cell-1 {
+    color: var(--blue); /* Font color for cell-1 */
+}
+
+.cell-2 {
+    color: var(--autumn_yellow); /* Font color for cell-2 */
+}
+
+.cell-3 {
+    color: var(--autumn_red); /* Font color for cell-3 */
+}
+
+/* Define the pulse animation */
+@keyframes pulseBorder {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.01);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Class to apply the pulse animation */
+.pulse-animation {
+    animation: pulse 1s infinite;
+}
+
+.outfit-picker-text {
+    color: #cc93ac;
+    font-style: italic;
+    font-size: 0.9rem;
+    visibility: hidden;
+}
+
+.applyOutfitPicker .outfit-picker-text {
+    visibility: visible;
+}
+
+.applyTempChecker .outfit-picker-text {
+    visibility: hidden;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 59px;
+    height: 34px;
+}
+
+.switch_bottom {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cc93ac;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--light-mauve);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #cc93ac;
+}
+
+input:focus + .slider {
+    /*box-shadow: 0 0 1px #2196F3;*/
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.switch .label.celsius {
+    left: 10px;
+}
+
+.switch .label.fahrenheit {
+    right: 10px;
+}
+
+.switch .label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #333;
+}
+
+/* Container for the smaller button */
+.button-container {
+    position: absolute; /* Position relative to the parent button */
+    top: 10px; /* Adjust position from the top */
+    right: 10px; /* Adjust position from the right */
+}
+
+/* Keyframes for the jiggle animation */
+@keyframes jiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(3deg);
+    }
+    20% {
+        transform: rotate(-3deg);
+    }
+    30% {
+        transform: rotate(3deg);
+    }
+    40% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    60% {
+        transform: rotate(-3deg);
+    }
+    70% {
+        transform: rotate(3deg);
+    }
+    80% {
+        transform: rotate(-3deg);
+    }
+
+}
+
+.details-link {
+    text-decoration: none; /* Remove underline */
+    color: var(--dark-mauve); /* Text color */
+    font-weight: bold; /* Make the text bold */
+}
+
+.gradient-box {
+    background: linear-gradient(to right, lemonchiffon, var(--autumn_red)); /* Gradient from yellow to red */
+    height: 3vh; /* Set height of the box */
+    width: 100%; /* Make the box full width */
+    margin: 20px 0; /* Space around the box */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid lemonchiffon; /* Border color and thickness */
+    display: flex; /* Use flexbox to position text */
+    justify-content: space-between; /* Space text on opposite sides */
+    align-items: center; /* Center text vertically */
+    padding: 0 20px; /* Padding to prevent text from touching the edges */
+    box-sizing: border-box; /* Include padding in width and height */
+    font-size: 1em; /* Font size for the text */
+    color: var(--dark-mauve); /* Text color */
+}
+
+
+.details-link:hover {
+    color: var(--blue); /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+footer {
+    display: flex;
+    padding: 2rem; /* Add some padding if needed */
+}
+
+
+.temperature-labels {
+    display: flex;
+    align-items: center; /* Center the text vertically within the container */
+}
+
+
+.cta.no-pulse {
+    animation: none; /* Disable the pulsing animation */
+}
+
+/* CSS class to disable click events */
+.no-click {
+    pointer-events: none; /* Prevent clicks */
+    color: #b564a3;
+    background-color: transparent;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Background Image Change</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header>
+    <i class="fas fa-cogs"></i> <!-- Gear icon -->
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        <span class="label celsius">°C</span>
+        <span class="label fahrenheit">°F</span>
+    </label>
+</header>
+<main>
+    <section class="welcome">
+        <div class="button-wrapper">
+            <button class="cta jiggle-button" id="color-button">
+                22°
+            </button>
+        </div>
+
+<!--         New section for the row of 4 cells -->
+<!--        <div class="gradient-box">-->
+<!--            <span class="text-left">18°</span>-->
+<!--            <span class="text-right">25°</span>-->
+<!--        </div>-->
+
+        <section class="cell-row">
+            <button class="cell cell-1">
+                <span class="cell-text"> </span>
+            </button>
+            <button class="cell cell-2">
+                <span class="cell-text"> </span>
+            </button>
+            <button class="cell cell-3">
+                <span class="cell-text"> ︎</span>
+            </button>
+        </section>
+    </section>
+</main>
+<footer>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        <span class="label celsius">🏠</span>
+        <span class="label fahrenheit">🏢</span>
+    </label>
+    <div class="temperature-labels">
+        <a href="https://www.accuweather.com/en/us/philadelphia/19102/weather-forecast/350540" class="details-link">Take me to CoolWeather.com! →</a>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
