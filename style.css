@@ -57,11 +57,13 @@ main {
 }
 
 .cta {
-    background-image: url('autumnleaves.jpg');
+    background-image: url('autumn_leaves.jpg');
     background-color: transparent; /* Fallback color */
     color: lemonchiffon; /* Hide button text */
     border: 20px solid lemonchiffon; /* Add border with desired thickness and color */
     width: 60vw; /* Set width to 60% of the viewport width */
+    max-height: 500px;
+    max_width: 500px;
     height: 60vw; /* Set height to match width (to maintain circular shape) */
     border-radius: 50%; /* Make the button circular */
     display: flex; /* Use flexbox to center content */
