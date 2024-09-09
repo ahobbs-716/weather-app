@@ -318,22 +318,6 @@ input:checked + .slider:before {
     font-weight: bold; /* Make the text bold */
 }
 
-.gradient-box {
-    background: linear-gradient(to right, lemonchiffon, var(--autumn_red)); /* Gradient from yellow to red */
-    height: 3vh; /* Set height of the box */
-    width: 100%; /* Make the box full width */
-    margin: 20px 0; /* Space around the box */
-    border-radius: 8px; /* Rounded corners */
-    border: 2px solid lemonchiffon; /* Border color and thickness */
-    display: flex; /* Use flexbox to position text */
-    justify-content: space-between; /* Space text on opposite sides */
-    align-items: center; /* Center text vertically */
-    padding: 0 20px; /* Padding to prevent text from touching the edges */
-    box-sizing: border-box; /* Include padding in width and height */
-    font-size: 1em; /* Font size for the text */
-    color: var(--dark-mauve); /* Text color */
-}
-
 
 .details-link:hover {
     color: var(--blue); /* Change color on hover */

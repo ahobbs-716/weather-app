@@ -3,11 +3,10 @@ const cells = document.querySelectorAll('.cell');
 
 // Define image URLs for button background
 const imageUrls = [
+    'shorts.jpg',      // Image for Action 2
+    'medium_cold.jpg',
     'comfy_warm.jpg',   // Image for Warm and Cozy
     'autumn_leaves.jpg', // Image for Autumn Vibes
-    'rain.jpg',      // Image for Action 1
-    'shorts.jpg',      // Image for Action 2
-    'medium_cold.jpg'
 ];
 
 // Define text for each cell in Warm and Cozy style
@@ -30,6 +29,7 @@ const tempCheckerTexts = {
 
 // Initial state
 let currentState = 'welcome'; // Set initial state to welcome
+let user_decided = 1;
 
 function applyTempChecker() {
     document.body.classList.add('applyTempChecker');
@@ -41,7 +41,7 @@ function applyTempChecker() {
         cell.classList.add('no-click'); // Add class to disable clicks
     });
 
-    button.style.backgroundImage = `url('${imageUrls[1]}')`; // Set button background to tempChecker image
+    button.style.backgroundImage = `url('${imageUrls[3]}')`; // Set button background to tempChecker image
     button.textContent = tempCheckerTexts['tempChecker']; // Set button text for tempChecker
 
 }
@@ -57,7 +57,7 @@ function applyOutfitPicker() {
         cell.querySelector('.cell-text').textContent = outfitPickerTexts[index] || 'Default Text'; // Set unique text for each button
         cell.classList.remove('no-click'); // Remove class to enable clicks
     });
-    button.style.backgroundImage = `url('${imageUrls[4]}')`; // Set button background to Warm and Cozy image
+    button.style.backgroundImage = `url('${imageUrls[user_decided]}')`; // Set button background to Warm and Cozy image
     button.textContent = tempCheckerTexts['outfitPicker']; // Set button text for Warm and Cozy
     button.style.border = '0px solid var(--autumn_red)';
 
@@ -90,17 +90,18 @@ cells.forEach((cell, index) => {
 
 // Function to handle clicks on the cell buttons
 function handleCellClick(index) {
+    user_decided = index
     switch(index) {
         case 0:
             button.style.backgroundImage = `url('${imageUrls[0]}')`; // Change to Action 1 image
             applyPulseAnimation(); // Trigger the pulse animation for button 2
             break;
         case 1:
-            button.style.backgroundImage = `url('${imageUrls[4]}')`; // Change to Action 2 image
+            button.style.backgroundImage = `url('${imageUrls[1]}')`; // Change to Action 2 image
             applyPulseAnimation(); // Trigger the pulse animation for button 2
             break;
         case 2:
-            button.style.backgroundImage = `url('${imageUrls[3]}')`; // Change to Action 3 image
+            button.style.backgroundImage = `url('${imageUrls[2]}')`; // Change to Action 3 image
             applyPulseAnimation(); // Trigger the pulse animation for button 2
             break;
         default:
