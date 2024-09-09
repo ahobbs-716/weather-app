@@ -17,6 +17,7 @@ Take a position: users wanted the app to do as much work as possible when decidi
 It will also aim to signpost CoolWeather’s other services e.g. the website.
 
 Credits: 
+
 ChatGPT (throughout)
 W3Schools, Figma Iconify (code for switches and icons)
 Coolors (colour scheme)
