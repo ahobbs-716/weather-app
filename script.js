@@ -20,7 +20,7 @@ const outfitPickerTexts = [
 const homeScreenTexts= [
     '18° ⇿ 25°',
     'low pollen',
-    'no rain',
+    'possible rain',
 ]
 // Define text for Celsius and Fahrenheit
 const tempCheckerTexts = {
